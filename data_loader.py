@@ -4,9 +4,19 @@ import numpy as np
 import cv2
 import os
 from tqdm import tqdm
+import argparse
 
-os.chdir("/Users/szymonczop/Desktop/SemestrIV/Nowak_projekt/DLP_2021/")
-data = pd.read_csv("fer2013.csv")
+def parse_arguments():
+    parser = argparse.ArgumentParser(description="Image recognition project")
+    parser.add_argument("--data", default = "fer2013.csv",
+                        required=False, help ="Loading and splitting data from (default: %(default)s)")
+    args = parser.parse_args()
+    return args.data
+
+data_df = parse_arguments()
+
+#os.chdir("/Users/szymonczop/Desktop/SemestrIV/Nowak_projekt/DLP_2021/")
+data = pd.read_csv(data_df)
 
 if not os.path.exists("data"):
     os.mkdir("data")
