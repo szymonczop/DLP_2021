@@ -15,7 +15,7 @@ def parse_arguments():
 
 data_df = parse_arguments()
 
-#os.chdir("/Users/szymonczop/Desktop/SemestrIV/Nowak_projekt/DLP_2021/")
+
 data = pd.read_csv(data_df)
 
 if not os.path.exists("data"):

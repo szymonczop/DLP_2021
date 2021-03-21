@@ -27,10 +27,10 @@ and save it to your present directory. To open it and store in tree of catalogue
 
 ``` python data_loader.py --data.csv```
 
-Where data.csv should be changed to howewer you changed the name of  dataset from Kaggle.
-The default argument is "fer2013.csv" so if you left the name without changes there is no need to sepcify 
-that argument. After running this command we  shoudl get following structure of folders.
-We can find and inspect images that are stored both in train and test subdirectory.
+Where data.csv should be changed to however you changed the name of the dataset from Kaggle.
+The default argument is "fer2013.csv" so if you left the name without changes there is no need to specify that argument.
+After running this command we should get the following structure of folders.
+We can find and inspect images that are stored both in the train and test subdirectory.
 
 ```
    .
