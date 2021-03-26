@@ -2,3 +2,5 @@
 *.jpg
 .DS_Store
 .idea/
+kaggle.json
+*.txt
