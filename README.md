@@ -25,7 +25,7 @@ The task is to categorize each face based on the emotion to one of seven categor
 In order to load data, download it into your local computer from [Kaggle](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data)
 and save it to your present directory. To open it and store in tree of catalogues use:
 
-``` python data_loader.py --data example_data.csv```
+``` python data_loader.py --data path_to_data/data.csv```
 
 Where data.csv should be changed to however you changed the name of the dataset from Kaggle.
 The default argument is "fer2013.csv" so if you left the name without changes there is no need to specify that argument.
