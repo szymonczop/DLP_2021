@@ -8,7 +8,7 @@ import argparse
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Image recognition project")
-    parser.add_argument("--data", default = "fer2013.csv",
+    parser.add_argument("--data", default = "fer2013/fer2013.csv",
                         required=False, help ="Loading and splitting data from (default: %(default)s)")
     args = parser.parse_args()
     return args.data
