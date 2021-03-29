@@ -1,0 +1,19 @@
+! pip install -q kaggle
+from google.colab import files
+files.upload()
+
+! mkdir ~/.kaggle
+! cp kaggle.json ~/.kaggle/
+! chmod 600 ~/.kaggle/kaggle.json
+!kaggle competitions download -c 'challenges-in-representation-learning-facial-expression-recognition-challenge'
+!sudo tar -xvf fer2013.tar.gz
+!git clone https://github.com/szymonczop/DLP_2021.git
+!python DLP_2021/data_loader.py --data ./fer2013/fer2013.csv
+
+
+Obecnie trzeba wykonać 2 komendy z terminala
+1. python kaggle_downloader.py
+2. python data_loader.py --data fer2013/fer2013.csv
+
+Wszystko na tym etapie będzie elegancko 
+
