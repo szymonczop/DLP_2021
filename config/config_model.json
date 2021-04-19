@@ -1,0 +1,9 @@
+{
+  "exp_name": "example exp",
+  "num_epochs": 50,
+  "learning_rate": 0.01,
+  "early_stop_patience": 5,
+  "reduce_lr_patience": 3,
+  "checkpoint": "model.h5",
+  "logs": "logs/model"
+}
