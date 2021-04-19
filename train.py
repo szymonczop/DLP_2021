@@ -31,9 +31,9 @@ model_dict = {"mlp_model1": models.mlp_model1(),
               "mlp_model5": models.mlp_model5(),
               "cnn_model1": models.cnn_model1(),
               "cnn_model2": models.cnn_model2(),
-              "cnn_model3": models.cnn_model3()
-              # "cnn_model4": models.cnn_model4(),
-              # "cnn_model5": models.cnn_model5()
+              "cnn_model3": models.cnn_model3(),
+              "cnn_model4": models.cnn_model4(),
+              "cnn_model5": models.cnn_model5()
               }
 
 
