@@ -110,9 +110,9 @@ def cnn_model1():
     '''
     model = Sequential([
         Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Flatten(),
         Dense(128, activation='relu'),
         Dense(7)
@@ -130,11 +130,11 @@ def cnn_model2():
     '''
     model = Sequential([
         Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Conv2D(128, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Flatten(),
         Dense(128, activation='relu'),
         Dense(7)
@@ -153,13 +153,13 @@ def cnn_model3():
     '''
     model = Sequential([
         Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Dropout(0.2),
         Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Dropout(0.2),
         Conv2D(128, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
+        MaxPooling2D(),
         Dropout(0.2),
         Flatten(),
         Dense(128, activation='relu'),
@@ -173,60 +173,60 @@ def cnn_model3():
 
     return model
 
-
-def cnn_model4():
-    '''
-    More conv layers and dropout at the end of the network.
-    '''
-    model = Sequential([
-        Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
-        MaxPooling2D((2, 2)),
-        Conv2D(64, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
-        Conv2D(128, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
-        Conv2D(256, (3, 3), activation='relu'),
-        MaxPooling2D((2, 2)),
-        Flatten(),
-        Dense(512, activation='relu'),
-        BatchNormalization(),
-        Dropout(0.5),
-        Dense(7)
-    ])
-
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                    metrics=['accuracy'])
-
-    return model
-
-
-def cnn_model5():
-    '''
-    Added BatchNormalization do CNN model 4.
-    '''
-    model = Sequential([
-        Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
-        BatchNormalization(),
-        MaxPooling2D((2, 2)),
-        Conv2D(64, (3, 3), activation='relu'),
-        BatchNormalization(),
-        MaxPooling2D((2, 2)),
-        Conv2D(128, (3, 3), activation='relu'),
-        BatchNormalization(),
-        MaxPooling2D((2, 2)),
-        Conv2D(256, (3, 3), activation='relu'),
-        BatchNormalization(),
-        MaxPooling2D((2, 2)),
-        Flatten(),
-        Dense(512, activation='relu'),
-        BatchNormalization(),
-        Dropout(0.5),
-        Dense(7)
-    ])
-
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                    metrics=['accuracy'])
-
-    return model
+#
+# def cnn_model4():
+#     '''
+#     More conv layers and dropout at the end of the network.
+#     '''
+#     model = Sequential([
+#         Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
+#         MaxPooling2D(),
+#         Conv2D(64, (3, 3), activation='relu'),
+#         MaxPooling2D(),
+#         Conv2D(128, (3, 3), activation='relu'),
+#         MaxPooling2D(),
+#         Conv2D(256, (3, 3), activation='relu'),
+#         MaxPooling2D(),
+#         Flatten(),
+#         Dense(512, activation='relu'),
+#         # BatchNormalization(),
+#         Dropout(0.5),
+#         Dense(7)
+#     ])
+#
+#     model.compile(optimizer=tf.keras.optimizers.Adam(),
+#                     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+#                     metrics=['accuracy'])
+#
+#     return model
+#
+#
+# def cnn_model5():
+#     '''
+#     Added BatchNormalization do CNN model 4.
+#     '''
+#     model = Sequential([
+#         Conv2D(32, (3, 3), activation='relu', input_shape=(42, 42, 1)),
+#         BatchNormalization(),
+#         MaxPooling2D(),
+#         Conv2D(64, (3, 3), activation='relu'),
+#         BatchNormalization(),
+#         MaxPooling2D(),
+#         Conv2D(128, (3, 3), activation='relu'),
+#         BatchNormalization(),
+#         MaxPooling2D(),
+#         Conv2D(256, (3, 3), activation='relu'),
+#         BatchNormalization(),
+#         MaxPooling2D(),
+#         Flatten(),
+#         Dense(512, activation='relu'),
+#         BatchNormalization(),
+#         Dropout(0.5),
+#         Dense(7)
+#     ])
+#
+#     model.compile(optimizer=tf.keras.optimizers.Adam(),
+#                     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+#                     metrics=['accuracy'])
+#
+#     return model
