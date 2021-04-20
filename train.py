@@ -3,6 +3,8 @@ import models_experiments as models
 import json
 from tensorflow.keras.callbacks import EarlyStopping, TensorBoard, ReduceLROnPlateau, ModelCheckpoint
 from data_augmentation import train_generator, test_generator
+from keras import optimizers
+import tensorflow as tf
 
 
 def parse_arguments():
@@ -36,7 +38,6 @@ model_dict = {"mlp_model1": models.mlp_model1(),
               "cnn_model5": models.cnn_model5()
               }
 
-
 selected_model = model_dict[args.model]
 selected_model.summary()
 
@@ -50,9 +51,13 @@ if args.params is None:
     tensorboard = TensorBoard(args.logs)
     model_checkpoint = ModelCheckpoint(args.checkpoint, save_best_only=True)
 
+    selected_model.compile(optimizer=tf.keras.optimizers.Adam(),
+                           loss='categorical_crossentropy',
+                           metrics=['accuracy'])
+
     history = selected_model.fit(
-        train_generator, steps_per_epoch = train_samples//batch_size, epochs=args.num_epochs,
-        validation_data=test_generator, validation_steps = test_samples//batch_size, shuffle=True,
+        train_generator, steps_per_epoch=train_samples // batch_size, epochs=args.num_epochs,
+        validation_data=test_generator, validation_steps=test_samples // batch_size, shuffle=True,
         callbacks=[early_stopping, tensorboard, reduce_lr, model_checkpoint]
     )
 else:
@@ -65,8 +70,12 @@ else:
     tensorboard = TensorBoard(model_params['logs'])
     model_checkpoint = ModelCheckpoint(model_params['checkpoint'], save_best_only=True)
 
+    selected_model.compile(optimizer=tf.keras.optimizers.Adam(),
+                           loss='categorical_crossentropy',
+                           metrics=['accuracy'])
+
     history = selected_model.fit(
-        train_generator, steps_per_epoch = train_samples//batch_size, epochs=model_params["num_epochs"],
-        validation_data=test_generator, validation_steps = test_samples//batch_size, shuffle=True,
+        train_generator, steps_per_epoch=train_samples // batch_size, epochs=model_params["num_epochs"],
+        validation_data=test_generator, validation_steps=test_samples // batch_size, shuffle=True,
         callbacks=[early_stopping, tensorboard, reduce_lr, model_checkpoint]
     )

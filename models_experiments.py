@@ -10,15 +10,15 @@ def mlp_model1():
     Simple neural network with activation function - relu.
     '''
     model = Sequential([
-                        Flatten(input_shape=(48, 48, 1)),
-                        Dense(256, activation='relu', use_bias = True),
-                        Dense(128, activation = 'relu', use_bias = True),
-                        Dense(7, use_bias = True)
+        Flatten(input_shape=(48, 48, 1)),
+        Dense(256, activation='relu', use_bias=True),
+        Dense(128, activation='relu', use_bias=True),
+        Dense(7, use_bias=True)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss='categorical_crossentropy',
-                  metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #               loss='categorical_crossentropy',
+    #               metrics=['accuracy'])
 
     return model
 
@@ -28,17 +28,17 @@ def mlp_model2():
     Simple neural network with dropout and activation function relu.
     '''
     model = Sequential([
-                        Flatten(input_shape=(48, 48, 1)),
-                        Dense(256, activation='relu', use_bias=True),
-                        Dropout(0.1),
-                        Dense(128, activation='relu', use_bias=True),
-                        Dropout(0.1),
-                        Dense(7, use_bias=True)
+        Flatten(input_shape=(48, 48, 1)),
+        Dense(256, activation='relu', use_bias=True),
+        Dropout(0.1),
+        Dense(128, activation='relu', use_bias=True),
+        Dropout(0.1),
+        Dense(7, use_bias=True)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss='categorical_crossentropy',
-                  metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #               loss='categorical_crossentropy',
+    #               metrics=['accuracy'])
 
     return model
 
@@ -48,40 +48,41 @@ def mlp_model3():
     Simple neural network with more hidden layers, dropout and tanh as activation function.
     '''
     model = Sequential([
-                        Flatten(input_shape=(48, 48, 1)),
-                        Dense(512, activation='tanh', use_bias=True),
-                        Dropout(0.4),
-                        Dense(256, activation='tanh', use_bias=True),
-                        Dropout(0.3),
-                        Dense(128, activation='tanh', use_bias=True),
-                        Dropout(0.2),
-                        Dense(7, use_bias=True)
+        Flatten(input_shape=(48, 48, 1)),
+        Dense(512, activation='tanh', use_bias=True),
+        Dropout(0.4),
+        Dense(256, activation='tanh', use_bias=True),
+        Dropout(0.3),
+        Dense(128, activation='tanh', use_bias=True),
+        Dropout(0.2),
+        Dense(7, use_bias=True)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss='categorical_crossentropy',
-                  metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #               loss='categorical_crossentropy',
+    #               metrics=['accuracy'])
 
     return model
+
 
 def mlp_model4():
     '''
     Simple neural network with more hidden layers of bigger size, dropout and tanh as activation function.
     '''
     model = Sequential([
-                         Flatten(input_shape = (48, 48, 1)),
-                         Dense(1000, activation = 'tanh', use_bias = True),
-                         Dropout(0.3),
-                         Dense(750, activation = 'tanh', use_bias = True),
-                         Dropout(0.2),
-                         Dense(300, activation = 'tanh', use_bias = True),
-                         Dropout(0.3),
-                         Dense(7, use_bias = True)
+        Flatten(input_shape=(48, 48, 1)),
+        Dense(1000, activation='tanh', use_bias=True),
+        Dropout(0.3),
+        Dense(750, activation='tanh', use_bias=True),
+        Dropout(0.2),
+        Dense(300, activation='tanh', use_bias=True),
+        Dropout(0.3),
+        Dense(7, use_bias=True)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss='categorical_crossentropy',
-                  metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #               loss='categorical_crossentropy',
+    #               metrics=['accuracy'])
 
     return model
 
@@ -91,16 +92,16 @@ def mlp_model5():
     Simple neural network with relu and more hidden layers of bigger size.
     '''
     model = Sequential([
-                        Flatten(input_shape=(48, 48, 1)),
-                        Dense(2000, activation='relu', use_bias=True),
-                        Dense(1000, activation='relu', use_bias=True),
-                        Dense(500, activation='relu', use_bias=True),
-                        Dense(250, activation='relu', use_bias=True),
-                        Dense(7, use_bias=True)
+        Flatten(input_shape=(48, 48, 1)),
+        Dense(2000, activation='relu', use_bias=True),
+        Dense(1000, activation='relu', use_bias=True),
+        Dense(500, activation='relu', use_bias=True),
+        Dense(250, activation='relu', use_bias=True),
+        Dense(7, use_bias=True)
     ])
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                  loss='categorical_crossentropy',
-                  metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #               loss='categorical_crossentropy',
+    #               metrics=['accuracy'])
     return model
 
 
@@ -118,9 +119,9 @@ def cnn_model1():
         Dense(7)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss='categorical_crossentropy',
-                    metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #                 loss='categorical_crossentropy',
+    #                 metrics=['accuracy'])
     return model
 
 
@@ -140,9 +141,9 @@ def cnn_model2():
         Dense(7)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss='categorical_crossentropy',
-                    metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #                 loss='categorical_crossentropy',
+    #                 metrics=['accuracy'])
 
     return model
 
@@ -167,9 +168,9 @@ def cnn_model3():
         Dense(7)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss='categorical_crossentropy',
-                    metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #                 loss='categorical_crossentropy',
+    #                 metrics=['accuracy'])
 
     return model
 
@@ -194,9 +195,9 @@ def cnn_model4():
         Dense(7)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss='categorical_crossentropy',
-                    metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #                 loss='categorical_crossentropy',
+    #                 metrics=['accuracy'])
 
     return model
 
@@ -225,8 +226,8 @@ def cnn_model5():
         Dense(7)
     ])
 
-    model.compile(optimizer=tf.keras.optimizers.Adam(),
-                    loss='categorical_crossentropy',
-                    metrics=['accuracy'])
+    # model.compile(optimizer=tf.keras.optimizers.Adam(),
+    #                 loss='categorical_crossentropy',
+    #                 metrics=['accuracy'])
 
     return model
