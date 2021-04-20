@@ -129,3 +129,6 @@ In folder ```notebooks``` you can find example downloading, training and tuning 
  ```kaggle_downloader.py``` that allow us to download emotion dataset directly from Kaggle with one command and
  ```kaggle_to_colab.txt``` with instruction how to do the same in ```Colab``` environment. In this file also information about
  further step of locall downloading process can be found. 
+ 
+ ###Note 
+ Whole work was done by Marta Kałużna and Szymon Czop 
