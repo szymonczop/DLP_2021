@@ -1,1 +1,4 @@
 *.csv
+*.jpg
+.DS_Store
+.idea/
