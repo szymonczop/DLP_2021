@@ -1,0 +1,8 @@
+pandas
+numpy
+opencv-python
+tqdm
+argparse
+tensorflow
+keras
+argparse
