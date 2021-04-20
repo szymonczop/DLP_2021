@@ -51,7 +51,7 @@ if args.params is None:
     tensorboard = TensorBoard(args.logs)
     model_checkpoint = ModelCheckpoint(args.checkpoint, save_best_only=True)
 
-    selected_model.compile(optimizer=tf.keras.optimizers.Adam(),
+    selected_model.compile(optimizer=tf.keras.optimizers.Adam(lr=args.lr),
                            loss='categorical_crossentropy',
                            metrics=['accuracy'])
 
@@ -70,7 +70,7 @@ else:
     tensorboard = TensorBoard(model_params['logs'])
     model_checkpoint = ModelCheckpoint(model_params['checkpoint'], save_best_only=True)
 
-    selected_model.compile(optimizer=tf.keras.optimizers.Adam(),
+    selected_model.compile(optimizer=tf.keras.optimizers.Adam(lr=args.lr),
                            loss='categorical_crossentropy',
                            metrics=['accuracy'])
 
